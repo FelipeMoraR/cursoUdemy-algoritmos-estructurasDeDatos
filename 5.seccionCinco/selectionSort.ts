@@ -1,0 +1,1 @@
+export const arr: Array<number> = [1,5,4,8,9,10,1,2,-1]
