@@ -37,7 +37,6 @@ export const multiplyMatrices: (matrixA: number[][], matrixB: number[][]) => num
       arr.forEach((el, indexEl) => valueToSave = valueToSave + (el * matrixB[indexEl][i]));
 
       newRow.push(valueToSave);
-      valueToSave = 0;
     }
     finalResult.push(newRow);
   });
