@@ -29,8 +29,11 @@ const insertElementLinkedList = (name: string, age: number, position: number): v
         newInstanceOfPointer = newInstanceOfPointer.next;
     }
 
+    
     if (newInstanceOfPointer) {
+        // Now C has the rest o values of the list
         newElement.next = newInstanceOfPointer.next;
+        // Now A has C as next node
         newInstanceOfPointer.next = newElement;
         return;
     }
