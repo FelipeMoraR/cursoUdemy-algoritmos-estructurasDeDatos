@@ -69,3 +69,41 @@ const deleteNode = (num: number): void => {
         return;
     }
 }
+
+
+//recursive way
+const deleteNodeRecursive = (node: INode | null, num: number): INode | null => {
+    if (!node) {
+        console.log('No more children');
+        return null;
+    }
+
+    if (node.num < num) {
+        node.rigth = deleteNodeRecursive(node.rigth, num);
+        return node;
+    } else if (node.num > num) {
+        node.left = deleteNodeRecursive(node.left, num);
+        return node;
+    }
+
+    return null;
+}
+
+const deleteNode2 = (num: number): void => {
+    if (typeof(num) !== 'number') {
+        console.log('Parameter has to be a number');
+        return;
+    }
+
+    if (!tree) {
+        console.log('Tree is empty');
+        return;
+    }
+
+    deleteNodeRecursive(tree, num);
+
+    if (tree === null) {
+        console.log('Root of tree deleted');
+        return
+    }
+}
